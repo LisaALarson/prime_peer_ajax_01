@@ -7,10 +7,11 @@ $(document).ready(function(){
 	$.ajax('data.json', {
         success: function(response){
         	$.each(response, function(index, response){
-	            var msg = $("<p></p>").css("background-color", response.color);
-	            msg.append("Color: " + response.color);
-	            msg.append("<br>Value: " + response.value);
-	            $('.myContainer').append(msg);
+        		$('body').append("<div class=newDiv></div>")
+		            var msg = $("<p></p>").css("background-color", response.color);
+		           	msg.append("Color: " + response.color);
+		            msg.append("<br>Value: " + response.value);
+		            $('body').append(msg);
 	        });
         },
         error: function(request, errorType, errorMessage){
